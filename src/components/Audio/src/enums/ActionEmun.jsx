@@ -1,0 +1,10 @@
+export const FetchAudio = Symbol('FetchAudio');
+export const FetchAudioList = Symbol('FetchAudioList');
+export const ReadyAudio = Symbol('ReadyAudio');
+export const PlayAudio = Symbol('PlayAudio');
+export const PauseAudio = Symbol('PauseAudio');
+export const PlayingAudio = Symbol('PlayingAudio');
+export const SeekProgress = Symbol('SeekProgress');
+export const AdjustVolume = Symbol('AdjustVolume');
+export const ToggleMute = Symbol('ToggleMute');
+export const ChangePlayType = Symbol('ChangePlayType');

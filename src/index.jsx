@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {Tabs} from 'antd';
 import './common/css/global.css';
+import Audio from './components/Audio/index';
+import {AudioList} from './config'
 
 class Hello extends React.Component {
 	constructor(props) {
@@ -10,22 +11,14 @@ class Hello extends React.Component {
 
 	render() {
 		return (
-			<Tabs
-				mode='horizontal'
-				defaultActiveKey='a'
-			>
-				<Tabs.TabPane key='a' tab='A'>
-					a
-				</Tabs.TabPane>
-
-				<Tabs.TabPane key='b' tab='B'>
-					b
-				</Tabs.TabPane>
-
-				<Tabs.TabPane key='c' tab='C'>
-					c
-				</Tabs.TabPane>
-			</Tabs>
+			<div>
+				<Audio
+					key={1}
+					autoPlay
+					audioList={AudioList}
+					currentAudioId={0}
+				/>
+			</div>
 		)
 	}
 }

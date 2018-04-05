@@ -33,14 +33,22 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
-				test: /(\.css)$/,
+				test: /\.css$/,
 				use: ['happypack/loader?id=css'],
+			},
+			{
+				test: /(\.png|\.jpe?g|\.svg|\.gif)$/i,
+				use: ['happypack/loader?id=image']
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf)\??.*$/i,
+				use: ['happypack/loader?id=resource'],
 			}
 		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Music'
+			title: 'MusicPlayer'
 		}),
 		new HappyPack({
 			id: 'babel',
@@ -50,6 +58,24 @@ module.exports = {
 		new HappyPack({
 			id: 'css',
 			loaders: ['style-loader', 'css-loader'],
+			threadPool: HappyPackThreadPool
+		}),
+		new HappyPack({
+			id: 'image',
+			loaders: [
+				{
+					loader: 'url-loader',
+					options: {
+						limit: 8192,
+						fallback: 'file-loader'
+					}
+				}
+			],
+			threadPool: HappyPackThreadPool
+		}),
+		new HappyPack({
+			id: 'resource',
+			loaders: ['file-loader'],
 			threadPool: HappyPackThreadPool
 		})
 	]

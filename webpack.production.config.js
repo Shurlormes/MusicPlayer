@@ -4,6 +4,7 @@ var HappyPack = require('happypack');
 var HappyPackThreadPool = HappyPack.ThreadPool({size: 5});
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
@@ -14,7 +15,7 @@ module.exports = {
 	entry: path.resolve(SOURCE_PATH, 'index.jsx'),
 	output: {
 		publicPath: './',
-		filename: 'bundle.js',
+		filename: 'static/js/bundle-[hash].js',
 		path: BUILD_PATH
 	},
 	resolve: {
@@ -32,12 +33,20 @@ module.exports = {
 				use: ExtractTextWebpackPlugin.extract({
 					use: ['happypack/loader?id=css']
 				})
+			},
+			{
+				test: /(\.png|\.jpe?g|\.svg|\.gif)$/i,
+				use: ['happypack/loader?id=image']
+			},
+			{
+				test: /\.(woff|woff2|eot|ttf)\??.*$/i,
+				use: ['happypack/loader?id=resource'],
 			}
 		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Music'
+			title: 'MusicPlayer'
 		}),
 		new HappyPack({
 			id: 'babel',
@@ -49,9 +58,37 @@ module.exports = {
 			loaders: ['css-loader?minimize'],
 			threadPool: HappyPackThreadPool
 		}),
-		new ExtractTextWebpackPlugin({
-			filename: 'bundle.css'
+		new HappyPack({
+			id: 'image',
+			loaders: [
+				{
+					loader: 'url-loader',
+					options: {
+						limit: 8192,
+						fallback: 'file-loader'
+					}
+				}
+			],
+			threadPool: HappyPackThreadPool
 		}),
-		new BundleAnalyzerPlugin()
+		new HappyPack({
+			id: 'resource',
+			loaders: [
+				{
+					loader: 'file-loader',
+					options: {
+						name: '[name]-[hash].[ext]',
+						outputPath: 'static/resource/',
+						publicPath: '../resource/'
+					},
+				}
+			],
+			threadPool: HappyPackThreadPool
+		}),
+		new ExtractTextWebpackPlugin({
+			filename: 'static/css/bundle-[hash].css'
+		}),
+		new BundleAnalyzerPlugin(),
+		new CleanWebpackPlugin(BUILD_PATH)
 	]
 };

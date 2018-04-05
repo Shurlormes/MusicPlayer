@@ -65,6 +65,9 @@ module.exports = {
 					loader: 'url-loader',
 					options: {
 						limit: 8192,
+						name: '[name]-[hash].[ext]',
+						outputPath: 'static/images/',
+						publicPath: '../images/',
 						fallback: 'file-loader'
 					}
 				}

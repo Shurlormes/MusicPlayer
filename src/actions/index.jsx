@@ -10,3 +10,5 @@ export const doSeekProgress = (seekTo) => ({type: ActionEnum.SeekProgress, seekT
 export const doAdjustVolume = (volume) => ({type: ActionEnum.AdjustVolume, volume});
 export const doToggleMute = () => ({type: ActionEnum.ToggleMute});
 export const doChangePlayType = (playType) => ({type: ActionEnum.ChangePlayType, playType});
+export const doNextAudio = (currentAudioId) => ({type: ActionEnum.NextAudio, currentAudioId});
+export const doPreviousAudio = (currentAudioId) => ({type: ActionEnum.PreviousAudio, currentAudioId});

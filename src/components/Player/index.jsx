@@ -8,12 +8,15 @@ class Player extends React.Component {
 	}
 
 	render() {
-		const {isPlaying, doPlayAudio, doPauseAudio} = this.props;
+		const {currentAudioId, isPlaying, doPlayAudio, doPauseAudio, doNextAudio, doPreviousAudio} = this.props;
 
 		return (
-			<Row justify='space-around' type='flex'>
+			<Row>
 				<Col span={8}>
-					<Button shape='circle'>
+					<Button
+						shape='circle'
+						onClick={() => doPreviousAudio(currentAudioId)}
+					>
 						<svg className='icon' aria-hidden='true'>
 							<use xlinkHref='#icon-previous' />
 						</svg>
@@ -34,7 +37,10 @@ class Player extends React.Component {
 				</Col>
 
 				<Col span={8}>
-					<Button shape='circle'>
+					<Button
+						shape='circle'
+						onClick={() => doNextAudio(currentAudioId)}
+					>
 						<svg className='icon' aria-hidden='true'>
 							<use xlinkHref='#icon-next' />
 						</svg>
@@ -48,7 +54,10 @@ class Player extends React.Component {
 export default Player;
 
 Player.propTypes = {
+	currentAudioId: PropTypes.number.isRequired,
 	isPlaying: PropTypes.bool.isRequired,
 	doPauseAudio: PropTypes.func.isRequired,
-	doPlayAudio: PropTypes.func.isRequired
+	doPlayAudio: PropTypes.func.isRequired,
+	doNextAudio: PropTypes.func.isRequired,
+	doPreviousAudio: PropTypes.func.isRequired
 };

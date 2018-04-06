@@ -1,7 +1,11 @@
 import React from 'react';
 import Audio from '../Audio';
-import Header from '../Header';
+import TopBar from '../TopBar';
 import Show from '../Show';
+import {Layout} from 'antd';
+import './css/index.css';
+
+const {Header, Footer, Content} = Layout;
 
 export default class MusicPlayer extends React.Component {
 	constructor(props) {
@@ -12,12 +16,18 @@ export default class MusicPlayer extends React.Component {
 		const currentMusic = this.props.list.filter(i => i.id === this.props.player.currentAudioId)[0];
 
 		return (
-			<div>
-				<Header />
-
-				<Show currentMusic={currentMusic} />
-
-				<Audio currentMusic={currentMusic} {...this.props} />
+			<div className='music-player-component'>
+				<Layout>
+					<Header className='h100'>
+						<TopBar/>
+					</Header>
+					<Content>
+						<Show currentMusic={currentMusic}/>
+					</Content>
+					<Footer>
+						<Audio currentMusic={currentMusic} {...this.props} />
+					</Footer>
+				</Layout>
 			</div>
 		)
 	}

@@ -12,7 +12,7 @@ class Handle extends React.Component {
 		const {isMuted, volume, playType, doAdjustVolume, doToggleMute, doChangePlayType} = this.props;
 
 		return (
-			<Row justify='space-around' type='flex'>
+			<Row>
 				<Col span={8}>
 					<Popover
 						content={
@@ -65,11 +65,7 @@ class Handle extends React.Component {
 										`#icon-all-repeat` :
 										(
 											playType === PlayTypeEnum.RepeatOnce ?
-												`#icon-repeat-once` :
-												(
-													playType === PlayTypeEnum.Shuffle ?
-														`#icon-shuffle` : `#icon-order`
-												)
+												`#icon-repeat-once` : `#icon-shuffle`
 										)
 								}
 							/>

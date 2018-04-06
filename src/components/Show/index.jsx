@@ -6,13 +6,12 @@ import './css/index.css';
 export default function Show({currentMusic}) {
 	return (
 		<div className='show-component'>
-			<Row justify='center' type='flex' align='bottom'>
-				<Col span={4}>
+			<Row justify='space-around' type='flex' align='middle'>
+				<Col className='music-info'>
 					<h1>{currentMusic.title}</h1>
 					<h2>{currentMusic.singer}</h2>
 				</Col>
-
-				<Col span={10}>
+				<Col className='music-cover'>
 					<img src={currentMusic.cover} />
 				</Col>
 			</Row>

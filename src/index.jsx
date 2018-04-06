@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {bindActionCreators, createStore} from 'redux';
+import {applyMiddleware, bindActionCreators, createStore} from 'redux';
 import {connect, Provider} from 'react-redux';
+import ReduxThunk from 'redux-thunk';
 import MusicPlayer from './components/MusicPlayer';
 import Reducers from './reducers/index';
 import {MusicList} from './config';
@@ -9,7 +10,7 @@ import * as Actions from './actions/index';
 import './common/css/global.css';
 import './common/icon/iconfont.js';
 
-const store = createStore(Reducers);
+const store = applyMiddleware(ReduxThunk)(createStore)(Reducers);
 
 const App = connect(
 	state => (state),
@@ -21,10 +22,11 @@ const App = connect(
 )(MusicPlayer);
 
 const mountPoint = document.createElement('div');
+mountPoint.setAttribute('id', 'root');
 document.body.appendChild(mountPoint);
 
 store.dispatch(Actions.doFetchAudioList(MusicList));
-store.dispatch(Actions.doFetchAudio(1));
+store.dispatch(Actions.doFetchAudio(2));
 store.dispatch(Actions.doPlayAudio());
 
 render(

@@ -26,7 +26,7 @@ class Audio extends React.Component {
 
 
 	render() {
-		const {audio, handle, list, player, action, currentMusic} = this.props;
+		const {audio, handle, player, action, currentMusic} = this.props;
 
 		return (
 			<div className='audio-component'>
@@ -40,20 +40,24 @@ class Audio extends React.Component {
 					url={currentMusic.url}
 					onReady={() => action.doReadyAudio(this.refs.audio)}
 					onProgress={() => action.onPlayingAudio()}
+					onEnded={() => action.doNextAudio(player.currentAudioId)}
 				/>
 
 				<Row justify='space-around' align='middle' type='flex'>
-					<Col xxl={2} xl={3} lg={4} md={5} sm={6} xm={7}>
+					<Col xxl={2} xl={3} lg={3} md={4} sm={6} xm={7}>
 						<Player
+							currentAudioId={player.currentAudioId}
 							isPlaying={player.isPlaying}
 							doPlayAudio={action.doPlayAudio}
 							doPauseAudio={action.doPauseAudio}
+							doNextAudio={action.doNextAudio}
+							doPreviousAudio={action.doPreviousAudio}
 						/>
 					</Col>
 
-					<Col xxl={20} xl={17} lg={16} md={14} sm={12} xm={10}>
+					<Col xxl={20} xl={18} lg={18} md={16} sm={12} xm={10}>
 						<Row justify='space-around' align='middle' type='flex'>
-							<Col span={0.5}>
+							<Col className='text-right' span={1}>
 								<span>{this.tipFormatter(audio.currentTime)}</span>
 							</Col>
 							<Col span={22}>
@@ -66,13 +70,13 @@ class Audio extends React.Component {
 									tipFormatter={this.tipFormatter}
 								/>
 							</Col>
-							<Col span={1}>
+							<Col className='text-left' span={1}>
 								<span>{this.tipFormatter(audio.duration)}</span>
 							</Col>
 						</Row>
 					</Col>
 
-					<Col xxl={2} xl={3} lg={4} md={5} sm={6} xm={7}>
+					<Col xxl={2} xl={3} lg={3} md={4} sm={6} xm={7}>
 						<Handle
 							{...handle}
 							doAdjustVolume={action.doAdjustVolume}

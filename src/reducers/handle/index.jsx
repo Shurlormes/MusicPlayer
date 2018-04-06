@@ -1,11 +1,11 @@
 import {ToggleMute, AdjustVolume, ChangePlayType} from '../../enums/ActionEmun';
-import {RepeatOnce, Order} from '../../enums/PlayTypeEnum';
+import {AllRepeat} from '../../enums/PlayTypeEnum';
 
 const initialState = {
 	isMuted: false,
 	volume: 1,
 	volumeBeforeMuted: 1,
-	playType: RepeatOnce
+	playType: AllRepeat
 };
 
 export default (state = initialState, action) => {
@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
 		case ChangePlayType:
 			return {
 				...state,
-				playType: action.playType > Order ? 0 : action.playType
+				playType: action.playType > AllRepeat ? 1 : action.playType
 			};
 		default:
 			return state;

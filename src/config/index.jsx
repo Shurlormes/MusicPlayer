@@ -17,8 +17,8 @@ export const MusicList = [
 		id: 2,
 		title: '让我欢喜让我忧',
 		singer: '周华健',
-		cover: 'http://singerimg.kugou.com/uploadpic/softhead/400/20140409/20140409112356300064.jpg',
-		url: 'http://fs.w.kugou.com/201804060140/5f1ab9e07ae80e742433a7f6021eeed0/G017/M04/17/03/sYYBAFVEmumAGwXGAEXLwJFbABE157.mp3'
+		cover: 'http://qukufile2.qianqian.com/data2/pic/2a9afdd505da416febc74f03c1336b9c/17885501/17885501.jpg@s_1,w_300,h_300',
+		url: 'http://zhangmenshiting.qianqian.com/data2/music/0ac5754e8771747539af16fefc6f0a20/540271672/540271672.mp3?xcode=279a58c4f5dbed84b6f28ebc1a3b5868'
 	},
 	{
 		id: 3,

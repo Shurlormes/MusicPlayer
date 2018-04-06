@@ -8,3 +8,5 @@ export const SeekProgress = Symbol('SeekProgress');
 export const AdjustVolume = Symbol('AdjustVolume');
 export const ToggleMute = Symbol('ToggleMute');
 export const ChangePlayType = Symbol('ChangePlayType');
+export const NextAudio = Symbol('NextAudio');
+export const PreviousAudio = Symbol('PreviousAudio');

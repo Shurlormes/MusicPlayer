@@ -1,4 +1,4 @@
-import {ReadyAudio, PlayingAudio, SeekProgress} from '../../enums/ActionEmun';
+import {ReadyAudio, PlayingAudio, SeekProgress, NextAudio, PreviousAudio} from '../../enums/ActionEmun';
 
 const initialState = {
 	audio: null,
@@ -9,11 +9,10 @@ const initialState = {
 export default (state = initialState, action) => {
 	switch (action.type) {
 		case ReadyAudio:
-			const audio = action.audio;
 			return {
 				...state,
-				audio,
-				duration: Math.floor(audio.getDuration())
+				audio: action.audio,
+				duration: Math.floor(action.audio.getDuration())
 			};
 		case PlayingAudio:
 			return {
@@ -25,6 +24,18 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				currentTime: state.audio.getCurrentTime()
+			};
+		case NextAudio:
+			return {
+				...state,
+				duration: 0,
+				currentTime: 0
+			};
+		case PreviousAudio:
+			return {
+				...state,
+				duration: 0,
+				currentTime: 0
 			};
 		default:
 			return state;

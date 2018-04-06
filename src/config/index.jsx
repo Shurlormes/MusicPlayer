@@ -1,4 +1,4 @@
-export const AudioList = [
+export const MusicList = [
 	{
 		id: 0,
 		title: '慢慢',

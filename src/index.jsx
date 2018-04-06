@@ -1,34 +1,36 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {bindActionCreators, createStore} from 'redux';
+import {connect, Provider} from 'react-redux';
+import MusicPlayer from './components/MusicPlayer';
+import Reducers from './reducers/index';
+import {MusicList} from './config';
+import * as Actions from './actions/index';
 import './common/css/global.css';
-import Audio from './components/Audio/index';
-import {AudioList} from './config'
+import './common/icon/iconfont.js';
 
-class Hello extends React.Component {
-	constructor(props) {
-		super(props)
-	}
+const store = createStore(Reducers);
 
-	render() {
-		return (
-			<div>
-				<Audio
-					key={1}
-					autoPlay
-					audioList={AudioList}
-					currentAudioId={0}
-				/>
-			</div>
-		)
-	}
-}
-
+const App = connect(
+	state => (state),
+	dispatch => (
+		{
+			action: bindActionCreators(Actions, dispatch)
+		}
+	)
+)(MusicPlayer);
 
 const mountPoint = document.createElement('div');
 document.body.appendChild(mountPoint);
 
+store.dispatch(Actions.doFetchAudioList(MusicList));
+store.dispatch(Actions.doFetchAudio(1));
+store.dispatch(Actions.doPlayAudio());
+
 render(
-	<Hello/>,
+	<Provider store={store}>
+		<App />
+	</Provider>,
 	mountPoint
 );
 

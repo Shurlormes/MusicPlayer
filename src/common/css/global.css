@@ -1,7 +1,12 @@
-@import '../icon/iconfont.css';
-
 body {
 	padding: 30px;
+}
+
+.icon {
+	width: 1em; height: 1em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
 }
 
 .w-25 {
@@ -40,6 +45,26 @@ body {
 	height: 100px !important;
 }
 
+.wh25 {
+	width: 25px !important;
+	height: 25px !important;
+}
+
+.wh50 {
+	width: 50px !important;
+	height: 50px !important;
+}
+
+.wh75 {
+	width: 75px !important;
+	height: 75px !important;
+}
+
+.wh100 {
+	width: 100px !important;
+	height: 100px !important;
+}
+
 .float-left {
 	float: left !important;
 }
@@ -66,4 +91,40 @@ body {
 
 .d-block {
 	display: block !important;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+.align-baseline {
+	vertical-align: baseline !important;
+}
+
+.align-top {
+	vertical-align: top !important;
+}
+
+.align-middle {
+	vertical-align: middle !important;
+}
+
+.align-bottom {
+	vertical-align: bottom !important;
+}
+
+.align-text-bottom {
+	vertical-align: text-bottom !important;
+}
+
+.align-text-top {
+	vertical-align: text-top !important;
 }

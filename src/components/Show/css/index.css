@@ -1,0 +1,19 @@
+.show-component img {
+	margin: 40px;
+	width: 400px;
+	height: 400px;
+	border-radius: 400px;
+	animation: rotate-animation 10s infinite linear;
+}
+
+@keyframes rotate-animation {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

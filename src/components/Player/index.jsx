@@ -11,10 +11,12 @@ class Player extends React.Component {
 		const {isPlaying, doPlayAudio, doPauseAudio} = this.props;
 
 		return (
-			<Row gutter={1} >
+			<Row justify='space-around' type='flex'>
 				<Col span={8}>
 					<Button shape='circle'>
-						<i className='iconfont icon-previous' />
+						<svg className='icon' aria-hidden='true'>
+							<use xlinkHref='#icon-previous' />
+						</svg>
 					</Button>
 				</Col>
 
@@ -25,13 +27,17 @@ class Player extends React.Component {
 							isPlaying ? doPauseAudio() : doPlayAudio()
 						}}
 					>
-						<i className={`iconfont ${isPlaying ? `icon-stop` : `icon-play` }`} />
+						<svg className='icon' aria-hidden='true'>
+							<use xlinkHref={isPlaying ? `#icon-stop` : `#icon-play` } />
+						</svg>
 					</Button>
 				</Col>
 
 				<Col span={8}>
 					<Button shape='circle'>
-						<i className='iconfont icon-next' />
+						<svg className='icon' aria-hidden='true'>
+							<use xlinkHref='#icon-next' />
+						</svg>
 					</Button>
 				</Col>
 			</Row>

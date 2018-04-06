@@ -12,7 +12,7 @@ class Handle extends React.Component {
 		const {isMuted, volume, playType, doAdjustVolume, doToggleMute, doChangePlayType} = this.props;
 
 		return (
-			<Row gutter={1} >
+			<Row justify='space-around' type='flex'>
 				<Col span={8}>
 					<Popover
 						content={
@@ -34,41 +34,57 @@ class Handle extends React.Component {
 							shape='circle'
 							onClick={doToggleMute}
 						>
-							<i className={`iconfont ${isMuted ? `icon-volume-none` : (volume > 0.7 ? `icon-volume-max` : (volume > 0.4 ? `icon-volume-mid` : `icon-volume-min`) ) }`} />
+							<svg className="icon" aria-hidden="true">
+								<use
+									xlinkHref={
+										isMuted ? `#icon-volume-none` :
+											(
+												volume > 0.7 ?
+													`#icon-volume-max` :
+													(
+														volume > 0.4 ?
+															`#icon-volume-mid` : `#icon-volume-min`
+													)
+											)
+									}/>
+							</svg>
 						</Button>
 
-					</Popover >
+					</Popover>
 				</Col>
 
 				<Col span={8}>
 					<Button
 						shape='circle'
-						onClick={() => doChangePlayType(playType+1)}
+						onClick={() => doChangePlayType(playType + 1)}
 					>
-						<i className={
-							`iconfont
-								${
+						<svg className="icon" aria-hidden="true">
+							<use
+								xlinkHref={
 									playType === PlayTypeEnum.AllRepeat ?
-										`icon-all-repeat` :
+										`#icon-all-repeat` :
 										(
 											playType === PlayTypeEnum.RepeatOnce ?
-												`icon-repeat-once` :
+												`#icon-repeat-once` :
 												(
 													playType === PlayTypeEnum.Shuffle ?
-														`icon-shuffle` : `icon-order`
+														`#icon-shuffle` : `#icon-order`
 												)
 										)
 								}
-							 `}
-						/>
+							/>
+						</svg>
 					</Button>
 				</Col>
 
 				<Col span={8}>
 					<Button
 						shape='circle'
-						icon='bars'
-					/>
+					>
+						<svg className='icon' aria-hidden='true'>
+							<use xlinkHref='#icon-music-list' />
+						</svg>
+					</Button>
 				</Col>
 			</Row>
 		)

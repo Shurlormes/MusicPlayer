@@ -1,4 +1,4 @@
-import {FetchAudioList} from '../../enums/ActionEmun';
+import {FetchAudioList} from '../../common/enums/ActionEmun';
 
 const initialState = [];
 

@@ -3,11 +3,28 @@
 	width: 250px;
 	height: 250px;
 	border-radius: 250px;
-	animation: rotate-animation 10s infinite linear;
+	animation: rotate-animation 40s infinite linear;
 }
 
-.show-component .music-cover {
-	padding-top: 10%;
+.show-component .switch-screen-model {
+	background: #fd4c5d;
+	margin: 5px;
+}
+
+.show-component .music-lyric.music-lyric-vertical {
+	padding-top: 2%;
+}
+
+.show-component .music-lyric.music-lyric-horizontal {
+	padding-top: 3%;
+}
+
+.show-component .music-info.music-info-horizontal {
+	padding-top: 5%;
+}
+
+.show-component .music-cover.music-cover-horizontal {
+	padding-left: 10%;
 }
 
 @keyframes rotate-animation {

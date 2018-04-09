@@ -1,5 +1,5 @@
-import {FetchAudioList, FetchAudio, PlayAudio, PauseAudio, NextAudio, PreviousAudio, ChangePlayType} from '../../enums/ActionEmun';
-import * as PlayTypeEnum from '../../enums/PlayTypeEnum';
+import {FetchAudioList, FetchAudio, PlayAudio, PauseAudio, NextAudio, PreviousAudio, ChangePlayType} from '../../common/enums/ActionEmun';
+import * as PlayTypeEnum from '../../common/enums/PlayTypeEnum';
 
 const initialState = {
 	currentAudioId: 1,

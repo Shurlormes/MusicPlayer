@@ -1,4 +1,4 @@
-import * as ActionEnum from '../enums/ActionEmun';
+import * as ActionEnum from '../common/enums/ActionEmun';
 
 export const doFetchAudio = (currentAudioId) => ({type: ActionEnum.FetchAudio, currentAudioId});
 export const doFetchAudioList = (audioList) => ({type: ActionEnum.FetchAudioList, audioList});

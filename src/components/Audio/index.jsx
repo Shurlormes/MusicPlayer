@@ -3,10 +3,10 @@ import ReactPlayer from 'react-player';
 import {Slider, Row, Col} from 'antd';
 import Player from '../Player/index'
 import Handle from '../Handle/index'
-import {RepeatOnce} from '../../enums/PlayTypeEnum'
+import {RepeatOnce} from '../../common/enums/PlayTypeEnum'
 
 
-class Audio extends React.Component {
+export default class Audio extends React.Component {
 	constructor(props) {
 		super(props);
 		if(this.props.autoPlay) {
@@ -90,5 +90,3 @@ class Audio extends React.Component {
 		)
 	}
 }
-
-export default Audio;

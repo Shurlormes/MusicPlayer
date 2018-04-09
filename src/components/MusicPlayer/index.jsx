@@ -1,8 +1,8 @@
 import React from 'react';
+import {Layout} from 'antd';
 import Audio from '../Audio';
 import TopBar from '../TopBar';
 import Show from '../Show';
-import {Layout} from 'antd';
 import './css/index.css';
 
 const {Header, Footer, Content} = Layout;

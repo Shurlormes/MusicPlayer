@@ -5,7 +5,7 @@ import {connect, Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import MusicPlayer from './components/MusicPlayer';
 import Reducers from './reducers/index';
-import {MusicList} from './config';
+import {MusicList} from './common/config';
 import * as Actions from './actions/index';
 import './common/css/global.css';
 import './common/icon/iconfont.js';
@@ -27,7 +27,7 @@ document.body.appendChild(mountPoint);
 
 store.dispatch(Actions.doFetchAudioList(MusicList));
 store.dispatch(Actions.doFetchAudio(2));
-store.dispatch(Actions.doPlayAudio());
+//store.dispatch(Actions.doPlayAudio());
 
 render(
 	<Provider store={store}>

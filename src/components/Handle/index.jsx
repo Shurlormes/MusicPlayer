@@ -1,9 +1,9 @@
 import React from 'react';
 import {Row, Col, Button, Slider, Popover} from 'antd';
 import PropTypes from 'prop-types';
-import * as PlayTypeEnum from '../../enums/PlayTypeEnum';
+import * as PlayTypeEnum from '../../common/enums/PlayTypeEnum';
 
-class Handle extends React.Component {
+export default class Handle extends React.Component {
 	constructor(props) {
 		super(props)
 	}
@@ -74,20 +74,18 @@ class Handle extends React.Component {
 				</Col>
 
 				<Col span={8}>
-					<Button
+					{/*<Button
 						shape='circle'
 					>
 						<svg className='icon' aria-hidden='true'>
 							<use xlinkHref='#icon-music-list' />
 						</svg>
-					</Button>
+					</Button>*/}
 				</Col>
 			</Row>
 		)
 	}
 }
-
-export default Handle;
 
 Handle.propTypes = {
 	isMuted: PropTypes.bool.isRequired,

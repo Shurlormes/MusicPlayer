@@ -1,5 +1,5 @@
-import {ToggleMute, AdjustVolume, ChangePlayType} from '../../enums/ActionEmun';
-import {AllRepeat} from '../../enums/PlayTypeEnum';
+import {ToggleMute, AdjustVolume, ChangePlayType} from '../../common/enums/ActionEmun';
+import {AllRepeat} from '../../common/enums/PlayTypeEnum';
 
 const initialState = {
 	isMuted: false,

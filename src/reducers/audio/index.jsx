@@ -1,4 +1,4 @@
-import {ReadyAudio, PlayingAudio, SeekProgress, NextAudio, PreviousAudio} from '../../enums/ActionEmun';
+import {ReadyAudio, PlayingAudio, SeekProgress, NextAudio, PreviousAudio} from '../../common/enums/ActionEmun';
 
 const initialState = {
 	audio: null,

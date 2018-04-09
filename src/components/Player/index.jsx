@@ -2,7 +2,7 @@ import React from 'react';
 import {Row, Col, Button} from 'antd';
 import PropTypes from 'prop-types';
 
-class Player extends React.Component {
+export default class Player extends React.Component {
 	constructor(props) {
 		super(props)
 	}
@@ -50,8 +50,6 @@ class Player extends React.Component {
 		)
 	}
 }
-
-export default Player;
 
 Player.propTypes = {
 	currentAudioId: PropTypes.number.isRequired,

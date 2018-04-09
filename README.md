@@ -1,7 +1,5 @@
 # Music Player
 
-	![预览](./README/overview.png)
-
 > Music Player 是一个基于 react 开发的 Web 音乐播放器。
 
 > 项目中使用了 redux 来管理全局的 state。UI 使用的是 [antd-design](https://ant.design/docs/react/introduce-cn)。

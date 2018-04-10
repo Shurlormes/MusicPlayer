@@ -7,6 +7,8 @@ var ROOT_PATH = path.resolve(__dirname);
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var SOURCE_PATH = path.resolve(ROOT_PATH, 'src');
 
+var theme = require('./theme');
+
 module.exports = {
 	mode: 'development',
 	entry: path.resolve(SOURCE_PATH, 'index.jsx'),
@@ -37,6 +39,10 @@ module.exports = {
 				use: ['happypack/loader?id=css'],
 			},
 			{
+				test: /\.less$/,
+				use: ['happypack/loader?id=less'],
+			},
+			{
 				test: /(\.png|\.jpe?g|\.svg|\.gif)$/i,
 				use: ['happypack/loader?id=image']
 			},
@@ -58,6 +64,11 @@ module.exports = {
 		new HappyPack({
 			id: 'css',
 			loaders: ['style-loader', 'css-loader'],
+			threadPool: HappyPackThreadPool
+		}),
+		new HappyPack({
+			id: 'less',
+			loaders: ['style-loader', 'css-loader', `less-loader?{"javascriptEnabled": true, "sourceMap":true, "modifyVars":${JSON.stringify(theme)}}`],
 			threadPool: HappyPackThreadPool
 		}),
 		new HappyPack({

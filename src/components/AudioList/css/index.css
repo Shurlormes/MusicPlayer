@@ -1,4 +1,4 @@
-.audio-list-component {
+.audio-list-component .audio-list {
 	padding-top: 2%;
 }
 
@@ -7,7 +7,7 @@
 }
 
 .audio-list-component .return-to-home {
-	padding: 2%;
+	margin-left: 5px;
 }
 
 .audio-list-component .audio-list-item.active {

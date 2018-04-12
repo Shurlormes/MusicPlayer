@@ -24,7 +24,7 @@ export default class AudioList extends React.Component {
 		return (
 			<div className='audio-list-component'>
 				<Link className='return-to-home' to='/'>返回首页</Link>
-				<Row justify='center' type='flex'>
+				<Row className='audio-list' justify='center' type='flex'>
 					<List>
 						{audioListHtml}
 					</List>

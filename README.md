@@ -8,7 +8,6 @@
 
 在线预览: https://shurlormes.github.io/MusicPlayer/
 
-
 ### 核心依赖版本
 
 * react@16.3.1
@@ -31,9 +30,10 @@
 	|   |   |-- enums                   // 枚举
 	|   |   |__ icon                    // 图标
 	|   |-- components                  // 容器
-	|   |   |-- Audio                   // 核心音乐播放组件
+	|   |   |-- Audio                   // 音乐播放组件
+	|   |   |-- AudioList               // 音乐列表组件
 	|   |   |-- Handle                  // 功能控制组件，音量、播放模式和音乐列表
-	|   |   |-- MusicPlayer             // 路由，整体布局容器
+	|   |   |-- MusicPlayer             // 路由，整体布局组件
 	|   |   |-- Player                  // 播放控制组件，切歌、暂停
 	|   |   |-- Show                    // 歌曲信息展示组件
 	|   |   |-- TopBar                  // 头部组件

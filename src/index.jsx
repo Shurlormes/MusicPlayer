@@ -26,8 +26,8 @@ mountPoint.setAttribute('id', 'root');
 document.body.appendChild(mountPoint);
 
 store.dispatch(Actions.doFetchAudioList(MusicList));
-store.dispatch(Actions.doFetchAudio(2));
-//store.dispatch(Actions.doPlayAudio());
+store.dispatch(Actions.doFetchAudio(1));
+store.dispatch(Actions.doPlayAudio());
 
 render(
 	<Provider store={store}>

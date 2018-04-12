@@ -10,3 +10,4 @@ export const ToggleMute = Symbol('ToggleMute');
 export const ChangePlayType = Symbol('ChangePlayType');
 export const NextAudio = Symbol('NextAudio');
 export const PreviousAudio = Symbol('PreviousAudio');
+export const AssignAudio = Symbol('AssignAudio');

@@ -1,0 +1,15 @@
+.audio-list-component {
+	padding-top: 2%;
+}
+
+.audio-list-component .audio-list-item {
+	cursor: pointer;
+}
+
+.audio-list-component .return-to-home {
+	padding: 2%;
+}
+
+.audio-list-component .audio-list-item.active {
+	color: #fd4c5d;
+}

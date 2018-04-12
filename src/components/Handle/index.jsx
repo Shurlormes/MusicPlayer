@@ -1,5 +1,6 @@
 import React from 'react';
 import {Row, Col, Button, Slider, Popover} from 'antd';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as PlayTypeEnum from '../../common/enums/PlayTypeEnum';
 
@@ -74,13 +75,15 @@ export default class Handle extends React.Component {
 				</Col>
 
 				<Col span={8}>
-					{/*<Button
-						shape='circle'
-					>
-						<svg className='icon' aria-hidden='true'>
-							<use xlinkHref='#icon-music-list' />
-						</svg>
-					</Button>*/}
+					<Link to='/list'>
+						<Button
+							shape='circle'
+						>
+							<svg className='icon' aria-hidden='true'>
+								<use xlinkHref='#icon-music-list' />
+							</svg>
+						</Button>
+					</Link>
 				</Col>
 			</Row>
 		)

@@ -1,8 +1,11 @@
 import React from 'react';
 import {Layout} from 'antd';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import Audio from '../Audio';
+import AudioList from '../AudioList';
 import TopBar from '../TopBar';
 import Show from '../Show';
+import Error from '../Error';
 import './css/index.css';
 
 const {Header, Footer, Content} = Layout;
@@ -13,22 +16,29 @@ export default class MusicPlayer extends React.Component {
 	}
 
 	render() {
-		const currentMusic = this.props.list.filter(i => i.id === this.props.player.currentAudioId)[0];
+		const {list, player, action} = this.props;
+		const currentMusic = list.filter(i => i.id === player.currentAudioId)[0];
 
 		return (
-			<div className='music-player-component'>
-				<Layout>
-					<Header className='h100'>
-						<TopBar/>
-					</Header>
-					<Content>
-						<Show currentMusic={currentMusic}/>
-					</Content>
-					<Footer>
-						<Audio currentMusic={currentMusic} {...this.props} />
-					</Footer>
-				</Layout>
-			</div>
+			<Router>
+				<div className='music-player-component'>
+					<Layout>
+						<Header className='h100'>
+							<TopBar/>
+						</Header>
+						<Content>
+							<Switch>
+								<Route exact path='/' render={() => <Show currentMusic={currentMusic} />} />
+								<Route path='/list' render={() => <AudioList audioList={list} currentAudioId={player.currentAudioId} doAssignAudio={action.doAssignAudio} />} />
+								<Route render={() => <Error />}/>
+							</Switch>
+						</Content>
+						<Footer>
+							<Audio currentMusic={currentMusic} {...this.props} />
+						</Footer>
+					</Layout>
+				</div>
+			</Router>
 		)
 	}
 }

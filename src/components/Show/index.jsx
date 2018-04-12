@@ -11,10 +11,6 @@ export default class Show extends React.Component {
 		}
 	}
 
-	formatLyric(lyric) {
-
-	}
-
 	render() {
 		const {currentMusic} = this.props;
 		const {isVertical} = this.state;
@@ -74,7 +70,7 @@ export default class Show extends React.Component {
 				{showHtml}
 			</div>
 		)
-	};
+	}
 }
 
 Show.propTypes = {

@@ -1,4 +1,4 @@
-import {FetchAudioList, FetchAudio, PlayAudio, PauseAudio, NextAudio, PreviousAudio, ChangePlayType} from '../../common/enums/ActionEmun';
+import {FetchAudioList, FetchAudio, PlayAudio, PauseAudio, NextAudio, PreviousAudio, ChangePlayType, AssignAudio} from '../../common/enums/ActionEmun';
 import * as PlayTypeEnum from '../../common/enums/PlayTypeEnum';
 
 const initialState = {
@@ -73,6 +73,11 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				currentAudioId: pickAudio(action.currentAudioId, state.playOrder, -1)
+			};
+		case AssignAudio:
+			return {
+				...state,
+				currentAudioId: action.currentAudioId
 			};
 		case ChangePlayType:
 			switch (action.playType) {

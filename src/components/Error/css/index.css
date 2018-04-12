@@ -1,0 +1,5 @@
+.error-component {
+	width: 100%;
+	height: 400px;
+	background: url('../../../common/images/404.png') no-repeat center;
+}

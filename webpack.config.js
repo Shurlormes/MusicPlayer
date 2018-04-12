@@ -1,7 +1,5 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var HappyPack = require('happypack');
-var HappyPackThreadPool = HappyPack.ThreadPool({size: 5});
 
 var ROOT_PATH = path.resolve(__dirname);
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
@@ -31,24 +29,48 @@ module.exports = {
 		rules: [
 			{
 				test: /(\.jsx|\.js)$/,
-				use: ['happypack/loader?id=babel'],
+				use: ['babel-loader'],
 				exclude: /node_modules/
 			},
 			{
 				test: /\.css$/,
-				use: ['happypack/loader?id=css'],
+				use: ['style-loader', 'css-loader'],
 			},
 			{
 				test: /\.less$/,
-				use: ['happypack/loader?id=less'],
+				use: [
+					'style-loader',
+					'css-loader',
+					`less-loader?{javascriptEnabled: true, modifyVars: ${JSON.stringify(theme)}}`
+				],
 			},
 			{
 				test: /(\.png|\.jpe?g|\.svg|\.gif)$/i,
-				use: ['happypack/loader?id=image']
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 8192,
+							name: '[name]-[hash].[ext]',
+							outputPath: 'static/images',
+							publicPath: './static/images',
+							fallback: 'file-loader'
+						}
+					}
+				]
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf)\??.*$/i,
-				use: ['happypack/loader?id=resource'],
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name]-[hash].[ext]',
+							outputPath: 'static/resource',
+							publicPath: './static/resource',
+						}
+					}
+				],
 			}
 		]
 	},
@@ -56,38 +78,5 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'MusicPlayer'
 		}),
-		new HappyPack({
-			id: 'babel',
-			loaders: ['babel-loader'],
-			threadPool: HappyPackThreadPool
-		}),
-		new HappyPack({
-			id: 'css',
-			loaders: ['style-loader', 'css-loader'],
-			threadPool: HappyPackThreadPool
-		}),
-		new HappyPack({
-			id: 'less',
-			loaders: ['style-loader', 'css-loader', `less-loader?{"javascriptEnabled": true, "sourceMap":true, "modifyVars":${JSON.stringify(theme)}}`],
-			threadPool: HappyPackThreadPool
-		}),
-		new HappyPack({
-			id: 'image',
-			loaders: [
-				{
-					loader: 'url-loader',
-					options: {
-						limit: 8192,
-						fallback: 'file-loader'
-					}
-				}
-			],
-			threadPool: HappyPackThreadPool
-		}),
-		new HappyPack({
-			id: 'resource',
-			loaders: ['file-loader'],
-			threadPool: HappyPackThreadPool
-		})
 	]
 };

@@ -10,13 +10,13 @@ export default class AudioList extends React.Component {
 	}
 
 	render() {
-		const {audioList, currentAudioId, doAssignAudio} = this.props;
+		const {audioList, currentAudioId, doFetchAudio} = this.props;
 		const audioListHtml = audioList.map(
 			audio =>
 				<List.Item
 					className={`audio-list-item ${audio.id === currentAudioId ? `active` : ``}`}
 					key={`audio-list-item-${audio.id}`}
-					onClick={() => doAssignAudio(audio.id)}
+					onClick={() => doFetchAudio(audio.id)}
 				>
 					{audio.title}
 				</List.Item>
@@ -36,5 +36,6 @@ export default class AudioList extends React.Component {
 
 AudioList.propsType = {
 	audioList: PropsType.array.isRequired,
-	currentAudioId: PropsType.number.isRequired
+	currentAudioId: PropsType.number.isRequired,
+	doFetchAudio: PropsType.func.isRequired
 };

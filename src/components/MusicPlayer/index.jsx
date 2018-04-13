@@ -29,7 +29,7 @@ export default class MusicPlayer extends React.Component {
 						<Content>
 							<Switch>
 								<Route exact path='/' render={() => <Show currentMusic={currentMusic} />} />
-								<Route path='/list' render={() => <AudioList audioList={list} currentAudioId={player.currentAudioId} doAssignAudio={action.doAssignAudio} />} />
+								<Route path='/list' render={() => <AudioList audioList={list} currentAudioId={player.currentAudioId} doFetchAudio={action.doFetchAudio} />} />
 								<Route render={() => <Error />}/>
 							</Switch>
 						</Content>

@@ -9,9 +9,6 @@ import {RepeatOnce} from '../../common/enums/PlayTypeEnum'
 export default class Audio extends React.Component {
 	constructor(props) {
 		super(props);
-		if(this.props.autoPlay) {
-
-		}
 	}
 
 	tipFormatter(value) {

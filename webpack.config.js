@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
@@ -23,7 +24,8 @@ module.exports = {
 		contentBase: BUILD_PATH,
 		historyApiFallback: true,
 		inline: true,
-		hot: true
+		hot: true,
+		open: true
 	},
 	module: {
 		rules: [
@@ -78,5 +80,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'MusicPlayer'
 		}),
+		new webpack.HotModuleReplacementPlugin()
 	]
 };

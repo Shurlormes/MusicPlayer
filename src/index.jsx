@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import {applyMiddleware, bindActionCreators, createStore} from 'redux';
 import {connect, Provider} from 'react-redux';
+import {hot} from 'react-hot-loader';
 import ReduxThunk from 'redux-thunk';
 import MusicPlayer from './components/MusicPlayer';
 import Reducers from './reducers/index';
@@ -12,14 +13,16 @@ import './common/icon/iconfont.js';
 
 const store = applyMiddleware(ReduxThunk)(createStore)(Reducers);
 
-const App = connect(
-	state => (state),
-	dispatch => (
-		{
-			action: bindActionCreators(Actions, dispatch)
-		}
-	)
-)(MusicPlayer);
+const App = hot(module)(
+	connect(
+		state => (state),
+		dispatch => (
+			{
+				action: bindActionCreators(Actions, dispatch)
+			}
+		)
+	)(MusicPlayer)
+);
 
 const mountPoint = document.createElement('div');
 mountPoint.setAttribute('id', 'root');
@@ -31,9 +34,7 @@ store.dispatch(Actions.doPlayAudio());
 
 render(
 	<Provider store={store}>
-		<App />
+		<App/>
 	</Provider>,
 	mountPoint
 );
-
-

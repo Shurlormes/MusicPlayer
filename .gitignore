@@ -15,8 +15,9 @@
 target/
 *.gz
 
-#node
+# Node
 node_modules/
+package-lock.json
 
-#webpack build
+# Webpack Build
 build/

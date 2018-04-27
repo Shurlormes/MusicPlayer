@@ -1,6 +1,7 @@
 import React from 'react';
 import {Layout} from 'antd';
 import {HashRouter as Router, Route, Switch} from 'react-router-dom';
+import {hot} from 'react-hot-loader';
 import Audio from '../Audio';
 import AudioList from '../AudioList';
 import TopBar from '../TopBar';
@@ -10,7 +11,7 @@ import './css/index.css';
 
 const {Header, Footer, Content} = Layout;
 
-export default class MusicPlayer extends React.Component {
+class MusicPlayer extends React.Component {
 	constructor(props) {
 		super(props)
 	}
@@ -42,3 +43,5 @@ export default class MusicPlayer extends React.Component {
 		)
 	}
 }
+
+export default hot(module)(MusicPlayer);

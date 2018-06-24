@@ -1,0 +1,8 @@
+.lyric-component .lyric-item.active {
+	color: #fd4c5d;
+}
+
+.lyric-component .lyric-item.inactive {
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}

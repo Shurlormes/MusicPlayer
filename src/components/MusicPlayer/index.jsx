@@ -17,7 +17,7 @@ class MusicPlayer extends React.Component {
 	}
 
 	render() {
-		const {list, player, action} = this.props;
+		const {list, player, audio, action} = this.props;
 		const currentMusic = list.filter(i => i.id === player.currentAudioId)[0];
 
 		return (
@@ -29,7 +29,7 @@ class MusicPlayer extends React.Component {
 						</Header>
 						<Content>
 							<Switch>
-								<Route exact path='/' render={() => <Show currentMusic={currentMusic} />} />
+								<Route exact path='/' render={() => <Show currentMusic={currentMusic} currentTime={audio.currentTime} />} />
 								<Route path='/list' render={() => <AudioList audioList={list} currentAudioId={player.currentAudioId} doFetchAudio={action.doFetchAudio} />} />
 								<Route render={() => <Error />}/>
 							</Switch>

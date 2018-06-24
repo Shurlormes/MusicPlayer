@@ -12,12 +12,12 @@ export default (state = initialState, action) => {
 			return {
 				...state,
 				audio: action.audio,
-				duration: Math.floor(action.audio.getDuration())
+				duration: action.audio.getDuration()
 			};
 		case PlayingAudio:
 			return {
 				...state,
-				currentTime: Math.floor(state.audio.getCurrentTime())
+				currentTime: state.audio.getCurrentTime()
 			};
 		case SeekProgress:
 			state.audio.seekTo(action.seekTo);

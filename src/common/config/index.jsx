@@ -193,7 +193,7 @@ export const MusicList = [
 	},
 	{
 		id: 3,
-		title: '带爱已成往事',
+		title: '当爱已成往事',
 		singer: '张国荣',
 		cover: 'http://imge.kugou.com/stdmusic/20151218/20151218210610972590.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/daycws.mp3',
@@ -296,7 +296,7 @@ export const MusicList = [
 		'[03:25.74]仍然能相拥才不怕骤变但怕思念\n' +
 		'[03:37.40]唯愿会及时拥抱入眠\n' +
 		'[03:42.95]留住这世上最暖一面\n' +
-		'[03:48.45]茫茫人海取暖渡过最冷一天\n'
+		'[03:48.45]茫茫人海取暖渡过最冷一天'
 	},
 	{
 		id: 5,

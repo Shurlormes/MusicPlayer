@@ -3,7 +3,7 @@ export const MusicList = [
 		id: 0,
 		title: '慢慢',
 		singer: '张学友',
-		cover: 'http://imge.kugou.com/stdmusic/20150720/20150720180445630032.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/mm.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/mm.mp3',
 		lyric: '[00:29.51]心慢慢疼慢慢冷\n' +
 		'[00:34.55]慢慢等不到爱人\n' +
@@ -52,7 +52,7 @@ export const MusicList = [
 		id: 1,
 		title: '遥远的她',
 		singer: '张学友',
-		cover: 'http://singerimg.kugou.com/uploadpic/softhead/400/20140527/20140527095042283066.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/yydt.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/yydt.mp3',
 		lyric: '[00:00.61]张学友 - 遥远的她\n' +
 		'[00:02.73]词：潘源良\n' +
@@ -98,7 +98,7 @@ export const MusicList = [
 		id: 2,
 		title: '漂洋过海来看你',
 		singer: '周华健',
-		cover: 'http://singerimg.kugou.com/uploadpic/softhead/400/20140409/20140409112356300064.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/pyghlkn.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/pyghlkn.mp3',
 		lyric: '[00:11.56]作词：李宗盛\n' +
 		'[00:12.67]作曲：李宗盛\n' +
@@ -195,7 +195,7 @@ export const MusicList = [
 		id: 3,
 		title: '当爱已成往事',
 		singer: '张国荣',
-		cover: 'http://imge.kugou.com/stdmusic/20151218/20151218210610972590.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/daycws.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/daycws.mp3',
 		lyric: '[00:00.18]当爱已成往事 - 张国荣\n' +
 		'[00:01.58]词：李宗盛\n' +
@@ -260,7 +260,7 @@ export const MusicList = [
 		id: 4,
 		title: '最冷一天',
 		singer: '张国荣',
-		cover: 'http://imge.kugou.com/stdmusic/20150720/20150720200545374576.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/zlyt.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/zlyt.mp3',
 		lyric: '[00:00.60]张国荣 - 最冷一天\n' +
 		'[00:01.60]词：林夕\n' +
@@ -302,7 +302,7 @@ export const MusicList = [
 		id: 5,
 		title: '山丘',
 		singer: '李宗盛',
-		cover: 'http://imge.kugou.com/stdmusic/20150716/20150716000008415239.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/sq.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/sq.mp3',
 		lyric: '[00:00.50]山丘 - 李宗盛\n' +
 		'[00:01.79]词：李宗盛\n' +
@@ -400,7 +400,7 @@ export const MusicList = [
 		id: 6,
 		title: '鬼迷心窍',
 		singer: '李宗盛',
-		cover: 'http://imge.kugou.com/stdmusic/20151218/20151218210706901898.jpg',
+		cover: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Image/gmxq.jpg',
 		url: 'https://raw.githubusercontent.com/Shurlormes/Resource/master/Music/gmxq.mp3',
 		lyric: '[00:00.00]鬼迷心窍 - 李宗盛\n' +
 		'[00:00.00]词：李宗盛\n' +
